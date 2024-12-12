@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^5.1.3",
     "astro": "^5.0.5",
-    "marvel-rivals": "file:"
+    "marvel-rivals": "file:",
+    "tailwindcss": "^3.4.16"
   }
 }
