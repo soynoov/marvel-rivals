@@ -1,5 +1,13 @@
 ---
 import Banner from '../components/Banner.astro';
+
+import { turso } from '../turso';
+
+const { rows } = await turso.execute('SELECT * FROM Hero');
 ---
 
 <Banner />
+
+<ul>
+  {rows.map((post) => <li>{post.title}</li>)}
+</ul>

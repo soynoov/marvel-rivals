@@ -1,7 +1,7 @@
 {
   "name": "marvel-rivals",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,6 +11,8 @@
   "dependencies": {
     "@astrojs/db": "^0.14.5",
     "@astrojs/tailwind": "^5.1.3",
+    "@astrojs/vercel": "^8.0.1",
+    "@libsql/client": "^0.14.0",
     "astro": "^5.1.2",
     "marvel-rivals": "file:",
     "tailwindcss": "^3.4.16"

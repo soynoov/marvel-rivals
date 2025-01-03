@@ -2,7 +2,7 @@ import { defineDb, defineTable, column } from 'astro:db';
 
 // https://astro.build/db/config
 
-const Heroe = defineTable({
+const Hero = defineTable({
   columns: {
     id: column.number({ primaryKey: true }),
     name: column.text(),
@@ -19,8 +19,30 @@ const Rol = defineTable({
   },
 });
 
+const TeamUp = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    descripcion: column.text(),
+    activator_hero_id: column.number({ references: () => Hero.columns.id }), //FK
+    affected_heroes: column.number(),
+  },
+});
+
+const Ability = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    heroe_id: column.number({ references: () => Hero.columns.id }), //FK
+    passives: column.json(),
+  },
+});
+
 // export
 
 export default defineDb({
-  tables: {},
+  tables: {
+    Hero,
+    Rol,
+    TeamUp,
+    Ability,
+  },
 });
